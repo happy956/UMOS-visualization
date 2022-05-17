@@ -21,9 +21,9 @@ jobs:
       -
         name: create env file
         run: |
-          echo "connect_str=${{ azure_storage_connect_str }}" >> .env
-          echo "container_name=${{ azure_storage_container_name }}" >> .env
-          echo "trip=${{ trip }}" >> .env
+          echo "connect_str=${{ secrets.azure_storage_connect_str }}" >> .env
+          echo "container_name=${{ secrets.azure_storage_container_name }}" >> .env
+          echo "trip=${{ secrets.trip }}" >> .env
           cat .env
       -
         name: docker build and push
