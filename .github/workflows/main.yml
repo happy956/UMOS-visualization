@@ -19,6 +19,13 @@ jobs:
           username: ${{ secrets.azure_registry_username }}
           password: ${{ secrets.azure_registry_password }}
       -
+        name: create env file
+        run: |
+          echo "connect_str=${{ azure_storage_connect_str }} >> .env
+          echo "container_name=${{ azure_storage_container_name }} >> .env
+          echo "trip=${{ trip }} >> .env
+          cat .env
+      -
         name: docker build and push
         run: docker build -t test .
         
