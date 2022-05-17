@@ -1,5 +1,4 @@
-from operator import truediv
-from flask import Flask, render_template, send_from_directory, jsonify
+from flask import Flask, send_from_directory, jsonify
 from flask_cors import CORS
 from utility import get_data
 import json
