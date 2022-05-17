@@ -1,0 +1,24 @@
+name: docker build and push
+
+on: push
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      -
+        name: docker login
+        uses: docker/login-action@v2.0.0
+        with:
+          registry: ${{ secrets.azure_registry }}
+          username: ${{ secrets.azure_registry_username }}
+          password: ${{ secrets.azure_registry_password }}
+          
+      -
+        name: docker build
+        run: docker build -t test .
+        
+      - name: docker push
+        run: docker push test:lastest
+          
+  
+  
