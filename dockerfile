@@ -8,6 +8,6 @@ RUN pip3 install -r requirements.txt
 
 WORKDIR /app/backend
 
-EXPOSE 8080
+EXPOSE 5000
 
-CMD ["python", "/app/backend/app.py"]
+CMD ["flask", "run", "--host", "0.0.0.0"]
