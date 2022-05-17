@@ -3,6 +3,7 @@ from dotenv import load_dotenv
 import os
 
 load_dotenv()
+
 def get_data(type):
     client = BlobServiceClient.from_connection_string(os.environ.get('connect_str'))
     container_client = client.get_container_client(os.environ.get('container_name'))
