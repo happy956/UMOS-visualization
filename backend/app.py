@@ -6,7 +6,6 @@ import json
 get_data('trip')
 
 app = Flask(__name__, template_folder='../frontend', static_folder='../frontend/static')
-CORS(app)
 
 @app.route('/', defaults={'path':''})
 @app.route('/<path:path>')
