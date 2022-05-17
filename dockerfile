@@ -10,4 +10,4 @@ WORKDIR /app/backend
 
 EXPOSE 8080
 
-CMD ["python", "-m", "flask", "run"]
+CMD ["python", "/app/backend/app.py"]
